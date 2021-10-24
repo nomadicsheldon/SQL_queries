@@ -81,4 +81,61 @@ SELECT CONCAT(UPPER(name),', ',UPPER(country)) AS location FROM cities;
 ```sql
 SELECT UPPER(CONCAT(name,', ',country)) AS location FROM cities;
 ```
+
+---
+
+## filtering rows with "WHERE" ==>
+
+#### Math Operations for "where"
+- "=" => are the values equal?
+- ">" => is the value on the left is greater?
+- "<" => is the value on the left is less?
+- ">=" => is the value on the left is greater or equal to?
+- "IN" => is the value present in the list?
+- "<=" => is the value on the left is lesser or equal to?
+- "<>" => are the value not equal?
+- "!=" => are the value not equal?
+- "BETWEEN" => is the value between two other values?
+- "NOT IN" => is the value not present in the list?
+
+####example =>
+
+```sql
+SELECT name, area FROM cities WHERE area > 40000;
+```
+```sql
+SELECT name, area FROM cities WHERE area BETWEEN 30000 AND 40000;
+```
+```sql
+SELECT name, area FROM cities WHERE name IN ('Delhi', 'Sanghai');
+```
+```sql
+SELECT name, area FROM cities WHERE name NOT IN ('Delhi', 'Sanghai');
+```
+- multiple comparison
+```sql
+SELECT name, area FROM cities WHERE name NOT IN ('Delhi', 'Sanghai') AND area > 45500;
+```
+- remember order of execution(1st- FROM cities, 2nd- WHERE population/area < 50, 3rd- SELECT name, population/area AS density), so you can't use "density" instead of "population/area" at population/area < 50.
+```sql
+SELECT name, population/area AS density FROM cities WHERE population/area < 50;
+```
+
+---
+
+## Updating rows =>
+> remember: when we are upating the value then be specific with "WHERE" it can change multiple rows which follows the condition. So "WHERE" statement should be like it selects only one row.
+
+```sql
+UPDATE cities SET population = 5000000 WHERE name='Delhi';
+```
+
+---
+
+## Deleting rows =>
+
+```sql
+DELETE FROM cities WHERE name='Sao Paulo';
+```
+
 ---
