@@ -29,12 +29,10 @@ VALUES('India', 'delhi', 3876500, 45645);
 ```sql
 INSERT INTO cities (name, country, population, area)
 VALUES
-  ('India', 'delhi', 3876500, 45645),
+  ('Delhi', 'India', 3876500, 45645),
   ('Sanghai', 'China', 234324, 34344),
   ('Sao Paulo', 'Brazil', 345344, 45461);
 ```
-
----
 
 ## retrieving all data from the table ==>
 
@@ -60,4 +58,27 @@ SELECT name, country FROM cities;
 SELECT name, population/ area AS density FROM cities;
 ```
 
+---
+
+## string operators and functions ==>
+
+>- || => join two strings
+>- CONCAT() => join two strings
+>- LOWER() => gives a lowercase string
+>- UPPER() => gives a uppercase string
+>- LENGTH() => gives number of characters in a string
+
+examples -
+```sql
+SELECT name || ', '|| country AS location FROM cities; 
+```
+```sql
+SELECT CONCAT(name,', ',country) AS location FROM cities;
+```
+```sql
+SELECT CONCAT(UPPER(name),', ',UPPER(country)) AS location FROM cities;
+```
+```sql
+SELECT UPPER(CONCAT(name,', ',country)) AS location FROM cities;
+```
 ---
