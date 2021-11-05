@@ -139,3 +139,28 @@ DELETE FROM cities WHERE name='Sao Paulo';
 ```
 
 ---
+
+## Creating table with primary key =>
+
+```sql
+CREATE TABLE users (
+	id SERIAL PRIMARY KEY,
+  username VARCHAR(50)
+);
+```
+### inserting in table
+```sql
+INSERT INTO users (username)
+VALUES
+  ('himanshu'),
+  ('shivanshu')
+```
+### reading data
+```sql
+SELECT * FROM users;
+```
+
+---
+
+
+
