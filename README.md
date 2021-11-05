@@ -161,6 +161,21 @@ SELECT * FROM users;
 ```
 
 ---
-
-
-
+## Creating table with foreign key =>
+```sql
+CREATE TABLE photos (
+	id SERIAL PRIMARY KEY,
+  	url VARCHAR(200),
+  	user_id INTEGER REFERENCES users(id)
+);
+```
+### inserting in table
+```sql
+INSERT INTO photos (url, user_id)
+VALUES
+	('http://sdsdf.jpg', 1);
+```
+### reading data
+```sql
+SELECT * FROM photos;
+```
